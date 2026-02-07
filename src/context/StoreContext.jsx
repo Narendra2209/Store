@@ -5,7 +5,16 @@ const StoreContext = createContext();
 export const useStore = () => useContext(StoreContext);
 
 // Initial Mock Data
-const initialCategories = ["Spices", "Dal & Pulses", "Dry Fruits", "Pooja Needs", "Daily Needs"];
+const initialCategories = [
+    "personal care",
+    "home care",
+    "oil sugar and masala",
+    "rice .Atta and dals",
+    "package food and dry foods",
+    "cool drinks",
+    "bru packets",
+    "రవ్వ"
+];
 const initialProducts = [
     {
         id: 101,
