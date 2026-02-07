@@ -54,10 +54,10 @@ const ProductCard = ({ product, type }) => {
             <div className="product-info">
                 <h3 className="product-name">{product.name}</h3>
 
-                <div className="company-badge">VNR STORE</div>
+                {/* <div className="company-badge">VNR STORE</div> */}
 
                 {/* Weight Display */}
-                <div className="product-weight">{currentVariant.weight}</div>
+                <div className="product-weight">{currentVariant.weight}G</div>
 
                 {/* Variant Selectors ( Price Points ) */}
                 <div className="variant-selector">
