@@ -87,6 +87,21 @@ const ProductCard = ({ product, type }) => {
                         {added ? <Check size={18} /> : <ShoppingCart size={18} />}
                     </button>
                 </div>
+
+                {/* Show Best Supplier - Lowest Price */}
+                {product.suppliers && product.suppliers.length > 0 && (
+                    <div className="supplier-info" style={{ marginTop: '0.75rem', fontSize: '0.8rem', color: '#666', borderTop: '1px solid #eee', paddingTop: '0.5rem' }}>
+                        {(() => {
+                            const cheapestSupplier = product.suppliers.reduce((min, s) => s.price < min.price ? s : min, product.suppliers[0]);
+                            return (
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                    <span>Best Rate: <span style={{ fontWeight: '600', color: '#2e7d32' }}>{cheapestSupplier.name}</span></span>
+                                    <span style={{ fontWeight: 'bold' }}>₹{cheapestSupplier.price}</span>
+                                </div>
+                            );
+                        })()}
+                    </div>
+                )}
             </div>
         </div>
     );
